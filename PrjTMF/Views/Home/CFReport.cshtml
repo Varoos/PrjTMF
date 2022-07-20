@@ -1,0 +1,498 @@
+﻿@model PrjTMF.Models.CFCls
+
+@{
+    Layout = null;
+}
+
+
+@using (Html.BeginForm("CFExcel", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <style>
+        #progress {
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            opacity: 0.5;
+            z-index: 1500;
+            background-image: url('../../Content/loader4.gif')no-repeat center center rgba(0,0,0,0.26);
+            /*background:url("../../Content/Processing.gif") no-repeat center center rgba(0,0,0,0.25);*/
+        }
+
+        .subtotal {
+            /*background-color:#0073AA !important;*/
+            color: black;
+        }
+
+        #BaseCurrency {
+            text-align: right;
+        }
+
+        .label {
+            color: #34c4f9;
+        }
+
+        h2 {
+            border-bottom: 3px solid #cc9900;
+            font: 2.75em/1.75em Georgia, serif;
+            color: #996600;
+            text-align: center;
+        }
+
+        tr.highlighted td {
+            background: brown;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        #Totaltr {
+            background-color: #99ccff;
+        }
+
+        body {
+            padding: 0px 20px !important;
+        }
+
+        .table .thead-dark th {
+            color: #fff;
+            background-color: #286090;
+            /*border-color: #32383e;*/
+        }
+
+        /* This is what we are focused on */
+        .table-wrap {
+            height: 500px;
+            font-size: 0.8em;
+        }
+
+            .table-wrap th {
+                position: sticky;
+                top: 0;
+            }
+
+            .table-wrap thead {
+                position: sticky;
+                top: 0;
+            }
+
+        /* A bit more styling to make it look better */
+        .table-wrap {
+            /*background: CadetBlue;*/
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th {
+            background: #DDD;
+        }
+
+        td, th {
+            padding: 0.3rem !important;
+            text-align: left;
+        }
+
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+            background-color: #c7dff1 !important;
+        }
+
+        .paging-nav {
+            text-align: right;
+            padding-top: 2px;
+        }
+
+            .paging-nav a {
+                margin: auto 1px;
+                text-decoration: none;
+                display: inline-block;
+                padding: 1px 7px;
+                background: #91b9e6;
+                color: white;
+                border-radius: 3px;
+            }
+
+            .paging-nav .selected-page {
+                background: #187ed5;
+                font-weight: bold;
+            }
+
+        .paging-nav,
+        #tableData {
+            width: 100%;
+            font-family: Arial, sans-serif;
+            font-size: x-small !important;
+        }
+
+        #wrapper {
+            width: 100%;
+            padding: 2%
+        }
+    </style>
+    <div id="wrapper">
+        <div id="progress" class="modal">
+            <div class="center">
+                <img src="~/Content/loader4.gif" />
+            </div>
+        </div>
+        <h2 style="color: #34c4f9 ;text-align:center;"> Cash Flow Statement</h2>
+        <div class="row form-group" style="margin-top:1%">
+            <div class="col-lg-4 col-md-4 col-sm-4" style="text-align:center;">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4" style="text-align:center;">
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4" style="text-align:center;">
+                @*<a class="btn btn-primary btn-sm" id="btnPdf"> Export to PDF </a>*@
+                @*<a class="btn btn-primary btn-sm" href="~/Reports/ReportViewer/PrjTMF.aspx">View Report</a>*@
+                <button type="submit" id="btnExcel" class="btn btn-primary btn-sm">Export to Excel</button>
+                @*<a class="btn btn-primary btn-sm" href="@Url.Action("ExcelGenerate")"> Export to Excel </a>*@
+                @Html.ActionLink("Back", "CFIndex", "Home", new { @CompanyId = Model._filter.CompanyId }, new { @class = "btn btn-primary btn-sm" })
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                @{
+                    var HeaderData = Model._filter;
+                    var list = Model._list;
+                    <table style="font-weight:bold;width:100%" >
+                        <tr>
+                            <td style="width:25%;text-align:right">
+                                Year :
+                            </td>
+                            <td style="width:25%">
+                                @HeaderData.Year
+                            </td>
+                            <td style="width: 25%; text-align: right">
+                                Report Type :
+                            </td>
+                            <td style="width:25%">
+                                @HeaderData.Type
+                            </td>
+                        </tr>
+
+                    </table>
+                }
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="table-wrap" style="height:auto !important">
+                    <table class="table table-bordered table-striped" border="1" id="tableData">
+                        <thead class="thead-dark">
+                            <tr id="tableHead">
+                                <th style="text-align:center;">
+                                    Head
+                                </th>
+                                @{
+                                    if (HeaderData.Type == "Year")
+                                    {
+                                        <th style="text-align:center;">
+                                            @HeaderData.Year.ToString()
+                                        </th>
+                                    }
+                                    else if (HeaderData.Type == "Quarter")
+                                    {
+                                        <th style="text-align:center;">
+                                            First Qtr @HeaderData.Year.ToString()
+                                        </th>
+                                        <th style="text-align:center;">
+                                            Second Qtr @HeaderData.Year.ToString()
+                                        </th>
+                                        <th style="text-align:center;">
+                                            Third Qtr @HeaderData.Year.ToString()
+                                        </th>
+                                        <th style="text-align:center;">
+                                            Fourth Qtr @HeaderData.Year.ToString()
+                                        </th>
+                                    }
+                                    else if (HeaderData.Type == "Month")
+                                    {
+                            <th style="text-align:center;">
+                                Jan @HeaderData.Year.ToString()
+                            </th>
+                            <th style="text-align:center;">
+                                Feb @HeaderData.Year.ToString()
+                            </th>
+                            <th style="text-align:center;">
+                                Mar @HeaderData.Year.ToString()
+                            </th>
+                            <th style="text-align:center;">
+                                Apr @HeaderData.Year.ToString()
+                            </th>
+                            <th style="text-align:center;">
+                                May @HeaderData.Year.ToString()
+                            </th>
+                            <th style="text-align:center;">
+                                Jun @HeaderData.Year.ToString()
+                            </th>
+                            <th style="text-align:center;">
+                                Jul @HeaderData.Year.ToString()
+                            </th>
+                            <th style="text-align:center;">
+                                Aug @HeaderData.Year.ToString()
+                            </th>
+                            <th style="text-align:center;">
+                                Sep @HeaderData.Year.ToString()
+                            </th>
+                            <th style="text-align:center;">
+                                Oct @HeaderData.Year.ToString()
+                            </th>
+                            <th style="text-align:center;">
+                                Nov @HeaderData.Year.ToString()
+                            </th>
+                            <th style="text-align:center;">
+                                Dec @HeaderData.Year.ToString()
+                            </th>
+                                    }
+                                }
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="golden">
+                            @{
+                                try
+                                {
+
+                                    if (list != null)
+                                    {
+                                        foreach (var obj in list)
+                                        {
+                                            
+                                            <tr align="center">
+                                                                            <td style="text-align:left;">
+                                                                                @if (obj.b == 1)
+                                                                                {
+                                                                                    <b>@obj.Head</b>
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    @obj.Head
+                                                                                }
+
+                                                                            </td>
+                                                @if (HeaderData.Type == "Year")
+                                                {
+                                            <td style="text-align:right;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.Year</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.Year
+                                                }
+                                            </td>
+                                                }
+                                                else if (HeaderData.Type == "Quarter")
+                                                {
+                                            <td style="text-align:right;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.FirstQtr</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.FirstQtr
+                                                }
+                                            </td>
+                                            <td style="text-align:right;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.SecondQtr</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.SecondQtr
+                                                }
+                                            </td>
+                                            <td style="text-align:right;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.ThirdQtr</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.ThirdQtr
+                                                }
+                                            </td>
+                                            <td style="text-align:right;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.FourthQtr</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.FourthQtr
+                                                }
+                                            </td>
+                                                }
+                                                else if (HeaderData.Type == "Month")
+                                                {
+                                            <td style="text-align:center;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.Jan</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.Jan
+                                                }
+                                            </td>
+                                            <td style="text-align:center;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.Feb</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.Feb
+                                                }
+                                            </td>
+                                            <td style="text-align:center;">
+                                                @if (obj.b == 1)
+                                                {
+                                                <b>@obj.Mar</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.Mar
+                                                }
+                                            </td>
+                                            <td style="text-align:right;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.Apr</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.Apr
+                                                }
+                                            </td>
+                                            <td style="text-align:center;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.May</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.May
+                                                }
+                                            </td>
+                                            <td style="text-align:center;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.Jun</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.Jun
+                                                }
+                                            </td>
+                                            <td style="text-align:center;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.Jul</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.Jul
+                                                }
+                                            </td>
+                                            <td style="text-align:right;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.Aug</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.Aug
+                                                }
+                                            </td>
+                                            <td style="text-align:center;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.Sep</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.Sep
+                                                }
+                                            </td>
+                                            <td style="text-align:center;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.Oct</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.Oct
+                                                }
+                                            </td>
+                                            <td style="text-align:center;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.Nov</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.Nov
+                                                }
+                                            </td>
+                                            <td style="text-align:right;">
+                                                @if (obj.b == 1)
+                                                {
+                                                    <b>@obj.Dec</b>
+                                                }
+                                                else
+                                                {
+                                                    @obj.Dec
+                                                }
+                                            </td>
+                                                }
+                                            </tr>
+                                        }
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    //alert(ex.Message);
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+<script src="~/Scripts/FClient.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/paging.js"></script>
+<link href="~/Content/dataTables.min.css" rel="stylesheet" />
+<script src="~/Scripts/dataTables.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+<script>
+        var compId =@Model._filter.CompanyId;
+        var path = '@System.Web.Configuration.WebConfigurationManager.AppSettings["IpAddress"]';
+        $(document).ready(function() {
+            debugger
+            //$('#tableData').DataTable();
+            
+        });
+</script>
+@Scripts.Render("~/bundles/jqueryval")
+
+

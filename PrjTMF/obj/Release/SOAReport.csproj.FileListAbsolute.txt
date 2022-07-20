@@ -1,0 +1,528 @@
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\SOAReport.dll.config
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\SOAReport.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\SOAReport.pdb
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\csc.exe
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\csc.exe.config
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\csc.rsp
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\csi.exe
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\csi.exe.config
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\csi.rsp
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.AppContext.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Collections.Immutable.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Console.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Globalization.Calendars.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.IO.Compression.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.IO.FileSystem.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Net.Http.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Net.Sockets.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Reflection.Metadata.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.ValueTuple.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Xml.XPath.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\vbc.exe
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\vbc.exe.config
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\vbc.rsp
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\VBCSCompiler.exe
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\roslyn\VBCSCompiler.exe.config
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Antlr3.Runtime.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\ClosedXML.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\DocumentFormat.OpenXml.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\ExcelNumberFormat.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Common.DataStructs.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Conn.exe
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.CreditManagement.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.DatabaseFactory.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\log4net.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.AI.DependencyCollector.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.ApplicationInsights.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.Owin.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.Web.Infrastructure.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Newtonsoft.Json.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Owin.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Buffers.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.IO.Packaging.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Memory.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Numerics.Vectors.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Web.Helpers.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Web.Mvc.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Web.Optimization.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Web.Razor.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Web.WebPages.Deployment.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Web.WebPages.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Web.WebPages.Razor.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\WebGrease.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.Office.Interop.Outlook.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.Exchange.WebServices.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\StackExchange.Redis.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.CoreMasters.DataStructs.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\FControls.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Security.DataStructs.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.TranSettings.DataStructs.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.CreditManagement.DataStructs.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Common.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Masters.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Masters.DataStructs.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Transactions.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Transactions.DataStructs.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Synchronization.DataStructs.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.TranSettings.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.CoreTransaction.DataStructs.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\office.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\FocusWpfControls.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Transitionals.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\MongoDB.Driver.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\MongoDB.Driver.GridFS.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\MongoDB.Bson.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.RD.DataStructs.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Pronghorn.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.DataLayer.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Company.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Printing.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.RD.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Migration.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.MRP.DataStructs.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.CoreMasters.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.QC.DataStructs.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.CoreTransaction.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Security.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Pos.BusinessObjects.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.QC.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Pos.DataAccessLayer.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\ICSharpCode.SharpZipLib.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Tds.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.GST.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\stdole.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\MongoDB.Driver.Core.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\SyntaxLayer.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\SqlServerSL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\OracleSL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\MySqlSL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Company.DataStructs.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Aspose.Pdf.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Gma.QrCodeNet.Encoding.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Export.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Home.DataStructs.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Home.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Session.BL.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\ResPOS.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.Pos.Common.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Focus.GST.DataStructs.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\NPOI.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\NPOI.OOXML.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\NPOI.OpenXmlFormats.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\NPOI.OpenXml4Net.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\ClosedXML.pdb
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\ClosedXML.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\DocumentFormat.OpenXml.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\ExcelNumberFormat.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\log4net.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.AI.DependencyCollector.pdb
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.AI.DependencyCollector.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.Owin.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Buffers.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Memory.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Numerics.Vectors.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Web.Helpers.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Web.Mvc.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Web.Optimization.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Web.Razor.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Web.WebPages.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Web.WebPages.Deployment.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\System.Web.WebPages.Razor.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Newtonsoft.Json.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Antlr3.Runtime.pdb
+D:\Focus\ART DUBAI\SOAReport\SOAReport\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Focus\ART DUBAI\SOAReport\SOAReport\obj\Release\SOAReport.csproj.AssemblyReference.cache
+D:\Focus\ART DUBAI\SOAReport\SOAReport\obj\Release\SOAReport.csproj.CoreCompileInputs.cache
+D:\Focus\ART DUBAI\SOAReport\SOAReport\obj\Release\SOAReport.dll
+D:\Focus\ART DUBAI\SOAReport\SOAReport\obj\Release\SOAReport.pdb
+D:\SOAReport\SOAReport\bin\SOAReport.dll.config
+D:\SOAReport\SOAReport\bin\SOAReport.dll
+D:\SOAReport\SOAReport\bin\SOAReport.pdb
+D:\SOAReport\SOAReport\bin\roslyn\csc.exe
+D:\SOAReport\SOAReport\bin\roslyn\csc.exe.config
+D:\SOAReport\SOAReport\bin\roslyn\csc.rsp
+D:\SOAReport\SOAReport\bin\roslyn\csi.exe
+D:\SOAReport\SOAReport\bin\roslyn\csi.exe.config
+D:\SOAReport\SOAReport\bin\roslyn\csi.rsp
+D:\SOAReport\SOAReport\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\SOAReport\SOAReport\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\SOAReport\SOAReport\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\SOAReport\SOAReport\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\SOAReport\SOAReport\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\SOAReport\SOAReport\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\SOAReport\SOAReport\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\SOAReport\SOAReport\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\SOAReport\SOAReport\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\SOAReport\SOAReport\bin\roslyn\Microsoft.Managed.Core.targets
+D:\SOAReport\SOAReport\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\SOAReport\SOAReport\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.AppContext.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Collections.Immutable.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Console.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Globalization.Calendars.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.IO.Compression.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.IO.FileSystem.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Net.Http.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Net.Sockets.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Reflection.Metadata.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.ValueTuple.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Xml.XmlDocument.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Xml.XPath.dll
+D:\SOAReport\SOAReport\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\SOAReport\SOAReport\bin\roslyn\vbc.exe
+D:\SOAReport\SOAReport\bin\roslyn\vbc.exe.config
+D:\SOAReport\SOAReport\bin\roslyn\vbc.rsp
+D:\SOAReport\SOAReport\bin\roslyn\VBCSCompiler.exe
+D:\SOAReport\SOAReport\bin\roslyn\VBCSCompiler.exe.config
+D:\SOAReport\SOAReport\bin\Antlr3.Runtime.dll
+D:\SOAReport\SOAReport\bin\ClosedXML.dll
+D:\SOAReport\SOAReport\bin\DocumentFormat.OpenXml.dll
+D:\SOAReport\SOAReport\bin\ExcelNumberFormat.dll
+D:\SOAReport\SOAReport\bin\Focus.Conn.exe
+D:\SOAReport\SOAReport\bin\Focus.CreditManagement.BL.dll
+D:\SOAReport\SOAReport\bin\Focus.DatabaseFactory.dll
+D:\SOAReport\SOAReport\bin\log4net.dll
+D:\SOAReport\SOAReport\bin\Microsoft.AI.Agent.Intercept.dll
+D:\SOAReport\SOAReport\bin\Microsoft.AI.DependencyCollector.dll
+D:\SOAReport\SOAReport\bin\Microsoft.AspNet.Identity.Core.dll
+D:\SOAReport\SOAReport\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\SOAReport\SOAReport\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\SOAReport\SOAReport\bin\Microsoft.Owin.dll
+D:\SOAReport\SOAReport\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\SOAReport\SOAReport\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\SOAReport\SOAReport\bin\Microsoft.Web.Infrastructure.dll
+D:\SOAReport\SOAReport\bin\Newtonsoft.Json.dll
+D:\SOAReport\SOAReport\bin\Owin.dll
+D:\SOAReport\SOAReport\bin\System.Buffers.dll
+D:\SOAReport\SOAReport\bin\System.Diagnostics.DiagnosticSource.dll
+D:\SOAReport\SOAReport\bin\System.IO.Packaging.dll
+D:\SOAReport\SOAReport\bin\System.Memory.dll
+D:\SOAReport\SOAReport\bin\System.Numerics.Vectors.dll
+D:\SOAReport\SOAReport\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\SOAReport\SOAReport\bin\System.Web.Helpers.dll
+D:\SOAReport\SOAReport\bin\System.Web.Mvc.dll
+D:\SOAReport\SOAReport\bin\System.Web.Optimization.dll
+D:\SOAReport\SOAReport\bin\System.Web.Razor.dll
+D:\SOAReport\SOAReport\bin\System.Web.WebPages.Deployment.dll
+D:\SOAReport\SOAReport\bin\System.Web.WebPages.dll
+D:\SOAReport\SOAReport\bin\System.Web.WebPages.Razor.dll
+D:\SOAReport\SOAReport\bin\WebGrease.dll
+D:\SOAReport\SOAReport\bin\StackExchange.Redis.dll
+D:\SOAReport\SOAReport\bin\Focus.CoreMasters.DataStructs.dll
+D:\SOAReport\SOAReport\bin\FControls.dll
+D:\SOAReport\SOAReport\bin\Focus.Security.DataStructs.dll
+D:\SOAReport\SOAReport\bin\Focus.TranSettings.DataStructs.dll
+D:\SOAReport\SOAReport\bin\Focus.CreditManagement.DataStructs.dll
+D:\SOAReport\SOAReport\bin\Focus.Common.BL.dll
+D:\SOAReport\SOAReport\bin\Focus.Masters.BL.dll
+D:\SOAReport\SOAReport\bin\Focus.Masters.DataStructs.dll
+D:\SOAReport\SOAReport\bin\Focus.Transactions.BL.dll
+D:\SOAReport\SOAReport\bin\Focus.Transactions.DataStructs.dll
+D:\SOAReport\SOAReport\bin\Focus.Synchronization.DataStructs.dll
+D:\SOAReport\SOAReport\bin\Focus.TranSettings.BL.dll
+D:\SOAReport\SOAReport\bin\Focus.CoreTransaction.DataStructs.dll
+D:\SOAReport\SOAReport\bin\FocusWpfControls.dll
+D:\SOAReport\SOAReport\bin\Transitionals.dll
+D:\SOAReport\SOAReport\bin\MongoDB.Driver.dll
+D:\SOAReport\SOAReport\bin\MongoDB.Driver.GridFS.dll
+D:\SOAReport\SOAReport\bin\MongoDB.Bson.dll
+D:\SOAReport\SOAReport\bin\Focus.RD.DataStructs.dll
+D:\SOAReport\SOAReport\bin\Focus.Pronghorn.BL.dll
+D:\SOAReport\SOAReport\bin\Focus.DataLayer.dll
+D:\SOAReport\SOAReport\bin\Focus.Company.BL.dll
+D:\SOAReport\SOAReport\bin\Focus.Printing.dll
+D:\SOAReport\SOAReport\bin\Focus.RD.BL.dll
+D:\SOAReport\SOAReport\bin\Focus.Migration.BL.dll
+D:\SOAReport\SOAReport\bin\Focus.MRP.DataStructs.dll
+D:\SOAReport\SOAReport\bin\Focus.CoreMasters.BL.dll
+D:\SOAReport\SOAReport\bin\Focus.QC.DataStructs.dll
+D:\SOAReport\SOAReport\bin\Focus.CoreTransaction.BL.dll
+D:\SOAReport\SOAReport\bin\Focus.Security.BL.dll
+D:\SOAReport\SOAReport\bin\Focus.Pos.BusinessObjects.dll
+D:\SOAReport\SOAReport\bin\Focus.QC.BL.dll
+D:\SOAReport\SOAReport\bin\Focus.Pos.DataAccessLayer.dll
+D:\SOAReport\SOAReport\bin\ICSharpCode.SharpZipLib.dll
+D:\SOAReport\SOAReport\bin\Focus.Tds.BL.dll
+D:\SOAReport\SOAReport\bin\Focus.GST.BL.dll
+D:\SOAReport\SOAReport\bin\MongoDB.Driver.Core.dll
+D:\SOAReport\SOAReport\bin\SyntaxLayer.dll
+D:\SOAReport\SOAReport\bin\SqlServerSL.dll
+D:\SOAReport\SOAReport\bin\OracleSL.dll
+D:\SOAReport\SOAReport\bin\MySqlSL.dll
+D:\SOAReport\SOAReport\bin\Focus.Company.DataStructs.dll
+D:\SOAReport\SOAReport\bin\Aspose.Pdf.dll
+D:\SOAReport\SOAReport\bin\Gma.QrCodeNet.Encoding.dll
+D:\SOAReport\SOAReport\bin\Focus.Export.dll
+D:\SOAReport\SOAReport\bin\Focus.Home.DataStructs.dll
+D:\SOAReport\SOAReport\bin\Focus.Home.BL.dll
+D:\SOAReport\SOAReport\bin\Focus.Session.BL.dll
+D:\SOAReport\SOAReport\bin\ResPOS.dll
+D:\SOAReport\SOAReport\bin\Focus.Pos.Common.dll
+D:\SOAReport\SOAReport\bin\Focus.GST.DataStructs.dll
+D:\SOAReport\SOAReport\bin\NPOI.dll
+D:\SOAReport\SOAReport\bin\NPOI.OOXML.dll
+D:\SOAReport\SOAReport\bin\NPOI.OpenXmlFormats.dll
+D:\SOAReport\SOAReport\bin\NPOI.OpenXml4Net.dll
+D:\SOAReport\SOAReport\bin\ClosedXML.pdb
+D:\SOAReport\SOAReport\bin\ClosedXML.xml
+D:\SOAReport\SOAReport\bin\DocumentFormat.OpenXml.xml
+D:\SOAReport\SOAReport\bin\ExcelNumberFormat.xml
+D:\SOAReport\SOAReport\bin\log4net.xml
+D:\SOAReport\SOAReport\bin\Microsoft.AI.DependencyCollector.pdb
+D:\SOAReport\SOAReport\bin\Microsoft.AI.DependencyCollector.xml
+D:\SOAReport\SOAReport\bin\Microsoft.AspNet.Identity.Core.xml
+D:\SOAReport\SOAReport\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\SOAReport\SOAReport\bin\Microsoft.Owin.xml
+D:\SOAReport\SOAReport\bin\System.Buffers.xml
+D:\SOAReport\SOAReport\bin\System.Diagnostics.DiagnosticSource.xml
+D:\SOAReport\SOAReport\bin\System.Memory.xml
+D:\SOAReport\SOAReport\bin\System.Numerics.Vectors.xml
+D:\SOAReport\SOAReport\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\SOAReport\SOAReport\bin\System.Web.Helpers.xml
+D:\SOAReport\SOAReport\bin\System.Web.Mvc.xml
+D:\SOAReport\SOAReport\bin\System.Web.Optimization.xml
+D:\SOAReport\SOAReport\bin\System.Web.Razor.xml
+D:\SOAReport\SOAReport\bin\System.Web.WebPages.xml
+D:\SOAReport\SOAReport\bin\System.Web.WebPages.Deployment.xml
+D:\SOAReport\SOAReport\bin\System.Web.WebPages.Razor.xml
+D:\SOAReport\SOAReport\bin\Newtonsoft.Json.xml
+D:\SOAReport\SOAReport\bin\Antlr3.Runtime.pdb
+D:\SOAReport\SOAReport\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\SOAReport\SOAReport\obj\Release\SOAReport.csproj.AssemblyReference.cache
+D:\SOAReport\SOAReport\obj\Release\SOAReport.csproj.CoreCompileInputs.cache
+D:\SOAReport\SOAReport\obj\Release\SOAReport.csproj.CopyComplete
+D:\SOAReport\SOAReport\obj\Release\SOAReport.dll
+D:\SOAReport\SOAReport\obj\Release\SOAReport.pdb
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\SOAReport.dll.config
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\SOAReport.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\SOAReport.pdb
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\csc.exe
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\csc.exe.config
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\csc.rsp
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\csi.exe
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\csi.exe.config
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\csi.rsp
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.AppContext.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Collections.Immutable.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Console.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Globalization.Calendars.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.IO.Compression.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.IO.FileSystem.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Net.Http.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Net.Sockets.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Reflection.Metadata.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.ValueTuple.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Xml.XPath.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\vbc.exe
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\vbc.exe.config
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\vbc.rsp
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\VBCSCompiler.exe
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\roslyn\VBCSCompiler.exe.config
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Antlr3.Runtime.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\ClosedXML.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\DocumentFormat.OpenXml.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\ExcelNumberFormat.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Common.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Conn.exe
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.CreditManagement.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.DatabaseFactory.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\log4net.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.AI.DependencyCollector.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.ApplicationInsights.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.Owin.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.Web.Infrastructure.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Newtonsoft.Json.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Owin.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Buffers.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.IO.Packaging.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Memory.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Numerics.Vectors.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Web.Helpers.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Web.Mvc.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Web.Optimization.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Web.Razor.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Web.WebPages.Deployment.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Web.WebPages.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Web.WebPages.Razor.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\WebGrease.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.Office.Interop.Outlook.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.Exchange.WebServices.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\StackExchange.Redis.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.CoreMasters.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\FControls.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Security.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.TranSettings.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.CreditManagement.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Common.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Masters.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Masters.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Transactions.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Transactions.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Synchronization.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.TranSettings.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.CoreTransaction.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\office.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\FocusWpfControls.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Transitionals.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\MongoDB.Driver.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\MongoDB.Driver.GridFS.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\MongoDB.Bson.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.RD.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Pronghorn.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.DataLayer.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Company.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Printing.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.RD.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Migration.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.MRP.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.CoreMasters.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.QC.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.CoreTransaction.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Security.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Pos.BusinessObjects.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.QC.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Pos.DataAccessLayer.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\ICSharpCode.SharpZipLib.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Tds.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.GST.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\stdole.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\MongoDB.Driver.Core.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\SyntaxLayer.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\SqlServerSL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\OracleSL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\MySqlSL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Company.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Aspose.Pdf.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Gma.QrCodeNet.Encoding.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Export.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Home.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Home.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Session.BL.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\ResPOS.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.Pos.Common.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.GST.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\NPOI.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\NPOI.OOXML.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\NPOI.OpenXmlFormats.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\NPOI.OpenXml4Net.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\ClosedXML.pdb
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\ClosedXML.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\DocumentFormat.OpenXml.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\ExcelNumberFormat.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\log4net.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.AI.DependencyCollector.pdb
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.AI.DependencyCollector.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.Owin.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Buffers.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Memory.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Numerics.Vectors.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Web.Helpers.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Web.Mvc.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Web.Optimization.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Web.Razor.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Web.WebPages.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Web.WebPages.Deployment.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\System.Web.WebPages.Razor.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Newtonsoft.Json.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Antlr3.Runtime.pdb
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\obj\Release\SOAReport.csproj.AssemblyReference.cache
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\obj\Release\SOAReport.csproj.CoreCompileInputs.cache
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\obj\Release\SOAReport.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\obj\Release\SOAReport.pdb
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.HRMS.DS.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.HRMS.Infrastructure.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.DataManagement.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\Focus.MRP8.DataStructs.dll
+D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\SOAReport\bin\NepaliDateConverter.dll

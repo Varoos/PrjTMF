@@ -1,0 +1,744 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\Focus\AL MASKAN REAL ESTATE LLC\SOAReport\PublishFiles\</_PublishTargetUrl>
+    <History>True|2022-07-13T08:39:19.3946998Z;True|2022-07-07T16:10:34.8093945+04:00;True|2022-07-01T14:59:12.8063642+04:00;True|2022-06-29T17:18:01.3264705+04:00;True|2022-06-28T15:29:25.2701677+04:00;True|2022-06-23T09:55:29.1645468+04:00;True|2022-06-21T17:19:03.3157335+04:00;True|2022-03-11T17:45:33.0097189+04:00;True|2022-02-23T13:02:28.4250817+04:00;True|2022-02-23T12:53:16.4620994+04:00;True|2022-02-23T12:29:22.3580567+04:00;True|2022-02-10T17:31:05.2180153+04:00;True|2022-01-27T14:26:45.6874322+04:00;True|2022-01-24T15:28:21.5657625+04:00;True|2022-01-19T16:27:48.9524341+04:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>10/02/2022 18:17:20</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>10/02/2022 18:17:04</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>10/02/2022 18:17:04</publishTime>
+    </File>
+    <File Include="bin/Aspose.Pdf.dll">
+      <publishTime>02/06/2016 17:52:36</publishTime>
+    </File>
+    <File Include="bin/ClosedXML.dll">
+      <publishTime>10/02/2022 18:17:06</publishTime>
+    </File>
+    <File Include="bin/ClosedXML.pdb">
+      <publishTime>10/02/2022 18:17:06</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.CrystalReports.Engine.dll">
+      <publishTime>10/02/2022 18:17:22</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportSource.dll">
+      <publishTime>10/02/2022 18:17:22</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Shared.dll">
+      <publishTime>10/02/2022 18:17:22</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Web.dll">
+      <publishTime>10/02/2022 18:17:22</publishTime>
+    </File>
+    <File Include="bin/cs/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/da/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/de/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/DocumentFormat.OpenXml.dll">
+      <publishTime>10/02/2022 18:17:06</publishTime>
+    </File>
+    <File Include="bin/en/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/02/2022 18:17:22</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>10/02/2022 18:17:22</publishTime>
+    </File>
+    <File Include="bin/es/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/ExcelNumberFormat.dll">
+      <publishTime>10/02/2022 18:17:08</publishTime>
+    </File>
+    <File Include="bin/FControls.dll">
+      <publishTime>03/31/2022 16:19:32</publishTime>
+    </File>
+    <File Include="bin/fi/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/Focus.Common.BL.dll">
+      <publishTime>06/22/2022 14:39:04</publishTime>
+    </File>
+    <File Include="bin/Focus.Common.DataStructs.dll">
+      <publishTime>06/24/2022 17:07:48</publishTime>
+    </File>
+    <File Include="bin/Focus.Company.BL.dll">
+      <publishTime>06/10/2022 18:09:56</publishTime>
+    </File>
+    <File Include="bin/Focus.Company.DataStructs.dll">
+      <publishTime>06/06/2022 17:19:30</publishTime>
+    </File>
+    <File Include="bin/Focus.Conn.exe">
+      <publishTime>07/14/2017 18:32:38</publishTime>
+    </File>
+    <File Include="bin/Focus.CoreMasters.BL.dll">
+      <publishTime>06/10/2022 18:10:00</publishTime>
+    </File>
+    <File Include="bin/Focus.CoreMasters.DataStructs.dll">
+      <publishTime>06/17/2022 17:45:04</publishTime>
+    </File>
+    <File Include="bin/Focus.CoreTransaction.BL.dll">
+      <publishTime>06/17/2022 17:45:10</publishTime>
+    </File>
+    <File Include="bin/Focus.CoreTransaction.DataStructs.dll">
+      <publishTime>06/17/2022 17:45:02</publishTime>
+    </File>
+    <File Include="bin/Focus.CreditManagement.BL.dll">
+      <publishTime>06/10/2022 18:09:58</publishTime>
+    </File>
+    <File Include="bin/Focus.CreditManagement.DataStructs.dll">
+      <publishTime>06/17/2022 17:45:04</publishTime>
+    </File>
+    <File Include="bin/Focus.DatabaseFactory.dll">
+      <publishTime>05/07/2021 13:13:20</publishTime>
+    </File>
+    <File Include="bin/Focus.DataLayer.dll">
+      <publishTime>04/01/2019 13:25:50</publishTime>
+    </File>
+    <File Include="bin/Focus.DataManagement.DataStructs.dll">
+      <publishTime>05/05/2022 17:08:24</publishTime>
+    </File>
+    <File Include="bin/Focus.Export.dll">
+      <publishTime>04/27/2022 13:32:44</publishTime>
+    </File>
+    <File Include="bin/Focus.GST.BL.dll">
+      <publishTime>02/19/2020 16:14:50</publishTime>
+    </File>
+    <File Include="bin/Focus.GST.DataStructs.dll">
+      <publishTime>02/19/2020 16:14:46</publishTime>
+    </File>
+    <File Include="bin/Focus.Home.BL.dll">
+      <publishTime>06/10/2022 18:09:58</publishTime>
+    </File>
+    <File Include="bin/Focus.Home.DataStructs.dll">
+      <publishTime>06/17/2022 17:45:04</publishTime>
+    </File>
+    <File Include="bin/Focus.HRMS.DS.dll">
+      <publishTime>07/14/2016 14:06:54</publishTime>
+    </File>
+    <File Include="bin/Focus.HRMS.Infrastructure.dll">
+      <publishTime>09/12/2015 18:37:56</publishTime>
+    </File>
+    <File Include="bin/Focus.Masters.BL.dll">
+      <publishTime>06/10/2022 18:09:58</publishTime>
+    </File>
+    <File Include="bin/Focus.Masters.DataStructs.dll">
+      <publishTime>06/17/2022 17:45:02</publishTime>
+    </File>
+    <File Include="bin/Focus.Migration.BL.dll">
+      <publishTime>05/05/2022 12:40:14</publishTime>
+    </File>
+    <File Include="bin/Focus.MRP.DataStructs.dll">
+      <publishTime>06/22/2022 13:08:52</publishTime>
+    </File>
+    <File Include="bin/Focus.MRP8.DataStructs.dll">
+      <publishTime>06/22/2022 13:08:56</publishTime>
+    </File>
+    <File Include="bin/Focus.Pos.BusinessObjects.dll">
+      <publishTime>04/27/2022 13:31:18</publishTime>
+    </File>
+    <File Include="bin/Focus.Pos.Common.dll">
+      <publishTime>04/27/2022 13:31:18</publishTime>
+    </File>
+    <File Include="bin/Focus.Pos.DataAccessLayer.dll">
+      <publishTime>04/27/2022 13:31:22</publishTime>
+    </File>
+    <File Include="bin/Focus.Printing.dll">
+      <publishTime>06/22/2022 14:46:06</publishTime>
+    </File>
+    <File Include="bin/Focus.Pronghorn.BL.dll">
+      <publishTime>06/22/2022 13:08:52</publishTime>
+    </File>
+    <File Include="bin/Focus.QC.BL.dll">
+      <publishTime>06/22/2022 13:09:08</publishTime>
+    </File>
+    <File Include="bin/Focus.QC.DataStructs.dll">
+      <publishTime>06/22/2022 13:09:06</publishTime>
+    </File>
+    <File Include="bin/Focus.RD.BL.dll">
+      <publishTime>06/27/2022 18:28:54</publishTime>
+    </File>
+    <File Include="bin/Focus.RD.DataStructs.dll">
+      <publishTime>06/21/2022 15:25:46</publishTime>
+    </File>
+    <File Include="bin/Focus.Security.BL.dll">
+      <publishTime>06/22/2022 13:09:06</publishTime>
+    </File>
+    <File Include="bin/Focus.Security.DataStructs.dll">
+      <publishTime>06/22/2022 13:08:46</publishTime>
+    </File>
+    <File Include="bin/Focus.Session.BL.dll">
+      <publishTime>06/22/2022 13:08:44</publishTime>
+    </File>
+    <File Include="bin/Focus.Synchronization.DataStructs.dll">
+      <publishTime>06/17/2022 17:45:04</publishTime>
+    </File>
+    <File Include="bin/Focus.Tds.BL.dll">
+      <publishTime>02/19/2020 16:25:12</publishTime>
+    </File>
+    <File Include="bin/Focus.Transactions.BL.dll">
+      <publishTime>06/22/2022 13:09:18</publishTime>
+    </File>
+    <File Include="bin/Focus.Transactions.DataStructs.dll">
+      <publishTime>06/22/2022 13:08:48</publishTime>
+    </File>
+    <File Include="bin/Focus.TranSettings.BL.dll">
+      <publishTime>06/22/2022 13:09:04</publishTime>
+    </File>
+    <File Include="bin/Focus.TranSettings.DataStructs.dll">
+      <publishTime>06/22/2022 13:08:44</publishTime>
+    </File>
+    <File Include="bin/FocusWpfControls.dll">
+      <publishTime>02/13/2017 19:06:10</publishTime>
+    </File>
+    <File Include="bin/fr/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/Gma.QrCodeNet.Encoding.dll">
+      <publishTime>03/17/2013 13:26:30</publishTime>
+    </File>
+    <File Include="bin/hu/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>02/01/2013 17:45:52</publishTime>
+    </File>
+    <File Include="bin/it/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/ja/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/ko/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>10/02/2022 18:17:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>10/02/2022 18:17:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>10/02/2022 18:17:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.pdb">
+      <publishTime>10/02/2022 18:17:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>10/02/2022 18:17:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>09/03/2016 11:57:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>10/02/2022 18:17:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>10/02/2022 18:17:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Exchange.WebServices.dll">
+      <publishTime>12/19/2014 16:32:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Office.Interop.Outlook.dll">
+      <publishTime>04/26/2007 14:00:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>10/02/2022 18:17:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>03/05/2020 16:16:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll">
+      <publishTime>03/05/2020 16:16:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>10/02/2022 18:17:16</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Bson.dll">
+      <publishTime>12/20/2021 17:17:02</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.Core.dll">
+      <publishTime>08/20/2019 21:07:12</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.dll">
+      <publishTime>08/20/2019 21:07:22</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.GridFS.dll">
+      <publishTime>08/20/2019 21:07:24</publishTime>
+    </File>
+    <File Include="bin/MySqlSL.dll">
+      <publishTime>11/10/2011 13:05:30</publishTime>
+    </File>
+    <File Include="bin/nb-NO/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/NepaliDateConverter.dll">
+      <publishTime>08/15/2015 20:34:12</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>10/02/2022 18:17:16</publishTime>
+    </File>
+    <File Include="bin/nl/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/NPOI.dll">
+      <publishTime>10/23/2017 12:05:12</publishTime>
+    </File>
+    <File Include="bin/NPOI.OOXML.dll">
+      <publishTime>10/23/2017 12:05:12</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXml4Net.dll">
+      <publishTime>10/23/2017 12:05:12</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXmlFormats.dll">
+      <publishTime>10/23/2017 12:05:12</publishTime>
+    </File>
+    <File Include="bin/office.dll">
+      <publishTime>04/26/2007 14:00:18</publishTime>
+    </File>
+    <File Include="bin/OracleSL.dll">
+      <publishTime>11/10/2011 13:05:30</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>10/02/2022 18:17:16</publishTime>
+    </File>
+    <File Include="bin/pl/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/pt/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/ResPOS.dll">
+      <publishTime>04/25/2022 20:09:28</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Managed.Core.targets">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Win32.Primitives.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Console.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.FileVersionInfo.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Globalization.Calendars.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.ZipFile.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Net.Http.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Net.Sockets.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Runtime.InteropServices.RuntimeInformation.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Algorithms.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Encoding.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Primitives.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.X509Certificates.dll">
+      <publishTime>10/02/2022 18:17:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>10/02/2022 18:17:14</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Threading.Tasks.Extensions.dll">
+      <publishTime>10/02/2022 18:17:14</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.ValueTuple.dll">
+      <publishTime>10/02/2022 18:17:14</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.ReaderWriter.dll">
+      <publishTime>10/02/2022 18:17:14</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XmlDocument.dll">
+      <publishTime>10/02/2022 18:17:14</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.dll">
+      <publishTime>10/02/2022 18:17:14</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.XDocument.dll">
+      <publishTime>10/02/2022 18:17:14</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>10/02/2022 18:17:14</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>10/02/2022 18:17:14</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>10/02/2022 18:17:14</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>10/02/2022 18:17:14</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>10/02/2022 18:17:14</publishTime>
+    </File>
+    <File Include="bin/ru/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/sk/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/SOAReport.dll">
+      <publishTime>07/13/2022 12:39:18</publishTime>
+    </File>
+    <File Include="bin/SOAReport.pdb">
+      <publishTime>07/13/2022 12:39:18</publishTime>
+    </File>
+    <File Include="bin/SqlServerSL.dll">
+      <publishTime>11/10/2011 13:06:36</publishTime>
+    </File>
+    <File Include="bin/StackExchange.Redis.dll">
+      <publishTime>12/20/2021 17:17:04</publishTime>
+    </File>
+    <File Include="bin/stdole.dll">
+      <publishTime>01/11/2021 16:21:40</publishTime>
+    </File>
+    <File Include="bin/sv/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/SyntaxLayer.dll">
+      <publishTime>11/10/2011 13:04:50</publishTime>
+    </File>
+    <File Include="bin/System.Buffers.dll">
+      <publishTime>10/02/2022 18:17:16</publishTime>
+    </File>
+    <File Include="bin/System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>10/02/2022 18:17:16</publishTime>
+    </File>
+    <File Include="bin/System.IO.Packaging.dll">
+      <publishTime>10/02/2022 18:17:18</publishTime>
+    </File>
+    <File Include="bin/System.Memory.dll">
+      <publishTime>10/02/2022 18:17:18</publishTime>
+    </File>
+    <File Include="bin/System.Numerics.Vectors.dll">
+      <publishTime>10/02/2022 18:17:18</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>10/02/2022 18:17:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>10/02/2022 18:17:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>10/02/2022 18:17:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>10/02/2022 18:17:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>10/02/2022 18:17:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>10/02/2022 18:17:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>10/02/2022 18:17:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>10/02/2022 18:17:10</publishTime>
+    </File>
+    <File Include="bin/th/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/tr/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/Transitionals.dll">
+      <publishTime>07/23/2010 13:31:44</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>10/02/2022 18:17:20</publishTime>
+    </File>
+    <File Include="bin/zh-CHS/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/zh-CHT/CrystalDecisions.Shared.resources.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>10/02/2022 18:17:26</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>10/02/2022 18:17:26</publishTime>
+    </File>
+    <File Include="Content/dataTables.min.css">
+      <publishTime>06/21/2022 15:34:16</publishTime>
+    </File>
+    <File Include="Content/loader4.gif">
+      <publishTime>10/02/2022 18:17:26</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>10/02/2022 18:17:26</publishTime>
+    </File>
+    <File Include="Content/toastr.min.css">
+      <publishTime>10/02/2022 18:17:26</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>10/02/2022 18:17:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>10/02/2022 18:17:26</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>10/02/2022 18:17:26</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>10/02/2022 18:17:26</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>10/02/2022 18:17:26</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>10/02/2022 18:17:26</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/02/2022 18:17:20</publishTime>
+    </File>
+    <File Include="Reports/dsReport.xsc">
+      <publishTime>02/23/2022 11:43:34</publishTime>
+    </File>
+    <File Include="Reports/dsReport.xss">
+      <publishTime>02/23/2022 11:43:34</publishTime>
+    </File>
+    <File Include="Reports/PrintCrystal.aspx">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Reports/rptFiles/SOAReport.rpt">
+      <publishTime>02/23/2022 15:02:20</publishTime>
+    </File>
+    <File Include="Scripts/ai.0.22.9-build00167.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/ai.0.22.9-build00167.min.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/dataTables.min.js">
+      <publishTime>06/21/2022 15:35:10</publishTime>
+    </File>
+    <File Include="Scripts/FClient.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui.min.js">
+      <publishTime>06/21/2022 15:37:50</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/paging.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Scripts/toastr.js">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Views/Home/AgeingIndex.cshtml">
+      <publishTime>03/10/2022 14:54:03</publishTime>
+    </File>
+    <File Include="Views/Home/AgeingReport.cshtml">
+      <publishTime>07/13/2022 11:27:59</publishTime>
+    </File>
+    <File Include="Views/Home/ExpenseIndex.cshtml">
+      <publishTime>06/24/2022 17:24:17</publishTime>
+    </File>
+    <File Include="Views/Home/ExpenseReport.cshtml">
+      <publishTime>07/01/2022 13:02:20</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>01/07/2022 17:33:17</publishTime>
+    </File>
+    <File Include="Views/Home/LeaseRevIndex.cshtml">
+      <publishTime>07/01/2022 13:04:47</publishTime>
+    </File>
+    <File Include="Views/Home/LeaseRevReport.cshtml">
+      <publishTime>07/01/2022 13:04:35</publishTime>
+    </File>
+    <File Include="Views/Home/LostRevDetIndex.cshtml">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Views/Home/LostRevDetReport.cshtml">
+      <publishTime>07/01/2022 13:02:20</publishTime>
+    </File>
+    <File Include="Views/Home/LostRevIndex.cshtml">
+      <publishTime>06/28/2022 17:46:13</publishTime>
+    </File>
+    <File Include="Views/Home/LostRevReport.cshtml">
+      <publishTime>07/01/2022 13:01:29</publishTime>
+    </File>
+    <File Include="Views/Home/OccupancyIndex.cshtml">
+      <publishTime>06/21/2022 15:41:54</publishTime>
+    </File>
+    <File Include="Views/Home/OccupanyReport.cshtml">
+      <publishTime>07/01/2022 13:02:17</publishTime>
+    </File>
+    <File Include="Views/Home/OSIndex.cshtml">
+      <publishTime>07/13/2022 12:07:41</publishTime>
+    </File>
+    <File Include="Views/Home/OSReport.cshtml">
+      <publishTime>07/13/2022 12:33:39</publishTime>
+    </File>
+    <File Include="Views/Home/Report.cshtml">
+      <publishTime>02/23/2022 12:19:26</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Views/Shared/Lockout.cshtml">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginPartial.cshtml">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Views/Shared/_UserLayout.cshtml">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>10/02/2022 18:17:34</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/21/2022 17:19:02</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
