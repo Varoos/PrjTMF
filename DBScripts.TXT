@@ -1,0 +1,532 @@
+alter Proc [dbo].[CashFlowReport]
+@year int=null,
+@type varchar(10) = null
+as
+begin
+--exec CashFlowReport 2022,'Month'
+declare @TblRange TABLE (
+startdt date,
+enddt date,
+seqno int
+)
+
+if @type = 'Year'
+begin
+insert into @TblRange
+select 
+    dateadd(M, number, CONVERT(date, CONVERT(varchar(5),@year)+'-1-1')) startdt,
+    dateadd(D,-1,dateadd(M, number+12, CONVERT(date, CONVERT(varchar(5),@year)+'-1-1'))) enddt,
+    Number+1 seqno 
+from master..spt_values 
+where type='p' 
+and number =0
+end
+else if @type = 'Quarter'
+begin
+insert into @TblRange
+select 
+    dateadd(M, 3*number, CONVERT(date, CONVERT(varchar(5),@year)+'-1-1')) startdt,
+    dateadd(D,-1,dateadd(M, 3*number+3, CONVERT(date, CONVERT(varchar(5),@year)+'-1-1'))) enddt,
+    Number+1 seqno
+from master..spt_values 
+where type='p' 
+and number between 0 and 3  
+end
+else if @type = 'Month'
+begin
+insert into @TblRange
+select 
+    dateadd(M, number, CONVERT(date, CONVERT(varchar(5),@year)+'-1-1')) startdt,
+    dateadd(D,-1,dateadd(M, number+1, CONVERT(date, CONVERT(varchar(5),@year)+'-1-1'))) enddt,
+    Number+1 seqno 
+from master..spt_values 
+where type='p' 
+and number between 0 and 11  
+end
+
+
+declare @AcBal TABLE (
+SubCategory varchar(500),
+Balance decimal(18,2),
+MainCashFLow int,
+SeqNo int
+)
+
+
+DECLARE CUR CURSOR FAST_FORWARD READ_ONLY FOR SELECT startdt, enddt,seqno FROM @TblRange
+DECLARE @startdt varchar(50)
+DECLARE @enddt varchar(50)
+declare @seqno int
+
+-- Use the cursor
+OPEN CUR
+FETCH NEXT FROM CUR INTO @startdt, @enddt, @seqno
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+
+insert into @AcBal
+select *,@seqno from dbo.Get_Ac_OP_CL_CUR_Bal(dbo.DateToInt(@startdt),dbo.DateToInt(@enddt))
+insert into @AcBal
+select *,@seqno from dbo.Get_NetEarnings(dbo.DateToInt(@startdt),dbo.DateToInt(@enddt))
+
+FETCH NEXT FROM CUR INTO @startdt, @enddt, @seqno
+END
+
+CLOSE CUR
+DEALLOCATE CUR
+drop table if exists  #TmpRes
+select * into #TmpRes from @AcBal pivot(sum(Balance) for SeqNo in ([1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12])) as pvt
+
+select * from 
+(
+select 'Operating Cash Flow' head,null [1],null [2],null [3],null [4],null [5],null [6],null [7],null [8],null [9],null [10],null [11],null[12],1 b,5 cf
+union all
+select SubCategory,[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],0 b,MainCashFLow cf from #TmpRes where MainCashFLow = 0
+union all 
+select 'Less Changes in Working Capital' head,null [1],null [2],null [3],null [4],null [5],null [6],null [7],null [8],null [9],null [10],null [11],null[12],1 b,5 cf
+union all 
+select SubCategory head,[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],0 b,MainCashFLow cf from #TmpRes where MainCashFLow = 1
+union all 
+select 'Cash from Operations' head ,sum([1]),sum([2]),Sum([3]),sum([4]),sum([5]),Sum([6]),sum([7]),sum([8]),sum([9]),sum([10]),sum([11]),sum([12]),1 b,5 cf from #TmpRes where MainCashFLow = 1
+union all
+select 'Investing Cash Flow' head,null [1],null [2],null [3],null [4],null [5],null [6],null [7],null [8],null [9],null [10],null [11],null[12],1 b,6 cf
+union all
+select SubCategory head,[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],0 b,MainCashFLow cf from #TmpRes where MainCashFLow = 2
+union all 
+select 'Cash from Investing' head ,sum([1]),sum([2]),Sum([3]),sum([4]),sum([5]),Sum([6]),sum([7]),sum([8]),sum([9]),sum([10]),sum([11]),sum([12]), 1 b,6 cf from #TmpRes where MainCashFLow = 2
+union all
+select 'Financing Cash Flow' head,null [1],null [2],null [3],null [4],null [5],null [6],null [7],null [8],null [9],null [10],null [11],null[12], 1 b,7 cf
+union all
+select SubCategory head,[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],0 b,MainCashFLow cf from #TmpRes where MainCashFLow = 3
+union all 
+select 'Cash from Financing' head ,sum([1]),sum([2]),Sum([3]),sum([4]),sum([5]),Sum([6]),sum([7]),sum([8]),sum([9]),sum([10]),sum([11]),sum([12]),1 b,7 cf from #TmpRes where MainCashFLow = 3
+union all
+select 'Net Increase (decrease)in Cash' head ,sum([1]),sum([2]),Sum([3]),sum([4]),sum([5]),Sum([6]),sum([7]),sum([8]),sum([9]),sum([10]),sum([11]),sum([12]),0 b,8 cf from #TmpRes where MainCashFLow in (1,2,3)
+union all
+select SubCategory head,[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12],0 b,MainCashFLow cf from #TmpRes where MainCashFLow = 4
+union all
+select 'Closing Cash Balance' head ,sum([1]),sum([2]),Sum([3]),sum([4]),sum([5]),Sum([6]),sum([7]),sum([8]),sum([9]),sum([10]),sum([11]),sum([12]),1 b,8 cf from #TmpRes where MainCashFLow in (1,2,3,4)
+)a 
+end
+
+
+
+
+
+
+alter FUNCTION [dbo].[Get_NetEarnings]
+(
+@StartDt int,
+@EndDt int
+)    
+RETURNS @NetEarningBal TABLE (
+SubCatery varchar(500),
+Balance decimal(18,2),
+MainCashFLow int
+)
+AS
+BEGIN
+
+declare @TmpAc TABLE (
+iMasterId int,
+sName varchar(500),
+sCode varchar(500),
+iLevel int,
+iSeq int,
+iParentId int,
+OP_DRBalance decimal(18,2),
+OP_CRBalance decimal(18,2),
+Cur_DRBalance decimal(18,2),
+Cur_CRBalance decimal(18,2),
+CL_DRBalance decimal(18,2),
+CL_CRBalance decimal(18,2),
+iType int
+)
+insert into @TmpAc
+select t.iMasterId, t.sName, t.sCode, t.iLevel + case when t.iLevel = 0 and t.iParentId = 0 then 0 else 1 end iLevel, t.iSeq, t.iParentId, 
+isnull(r.OP_DRBalance,0) OP_DRBalance, isnull(r.OP_CRBalance,0) OP_CRBalance, isnull(r.Cur_DRBalance,0) Cur_DRBalance, 
+isnull(r.Cur_CRBalance,0) Cur_CRBalance, isnull(r.CL_DRBalance,0) CL_DRBalance, isnull(r.CL_CRBalance,0) CL_CRBalance, 0 iType 
+from fCore_GetAccountTreeSequenceForReport(0,0) t
+left outer join 
+(select ParentName, sum(OP_DRBalance) OP_DRBalance, sum(OP_CRBalance) OP_CRBalance, sum(Cur_DRBalance) Cur_DRBalance, sum(Cur_CRBalance) Cur_CRBalance, 
+sum(CL_DRBalance) CL_DRBalance, sum(CL_CRBalance) CL_CRBalance 
+from 
+(select b.iMasterId, case when b.OP_NetBalance < 0 then b.OP_NetBalance else 0 end OP_DRBalance, case when b.OP_NetBalance > 0 then b.OP_NetBalance else 0 end OP_CRBalance, 
+b.Cur_DRBalance, b.Cur_CRBalance, case when b.CL_NetBalance < 0 then CL_NetBalance else 0 end CL_DRBalance, case when b.CL_NetBalance > 0 then CL_NetBalance else 0 end CL_CRBalance, 
+g.ParentCode, g.ParentName  
+from 
+(select iAccount iMasterId, ISNULL(sum(OP_NetBalance), 0) OP_NetBalance, abs(ISNULL(sum(OP_DRBalance), 0)) OP_DRBalance,abs(ISNULL(sum(OP_CRBalance), 0)) OP_CRBalance, 
+ISNULL(sum(Cur_NetBalance), 0) Cur_NetBalance, abs(ISNULL(sum(Cur_DRBalance), 0)) Cur_DRBalance,abs(ISNULL(sum(Cur_CRBalance), 0)) Cur_CRBalance, 
+ISNULL(sum(CL_NetBalance), 0) CL_NetBalance, abs(ISNULL(sum(CL_DRBalance), 0)) CL_DRBalance,abs(ISNULL(sum(CL_CRBalance), 0)) CL_CRBalance 
+from   
+(  
+select iCode iAccount , sum(mAmount1) OP_NetBalance, sum(case when mAmount1<0 then  mAmount1 else 0 end) OP_DRBalance,sum(case when mAmount1>0 then  mAmount1 else 0 end) OP_CRBalance, 
+0 Cur_NetBalance, 0 Cur_DRBalance, 0 Cur_CRBalance, 0 CL_NetBalance, 0 CL_DRBalance, 0 CL_CRBalance   
+from tCore_Data_0  join tCore_Header_0  on tCore_Data_0.iHeaderId = tCore_Header_0.iHeaderId  
+where bUpdateFA = 1 AND bSuspendUpdateFA = 0 AND iAuthStatus < 2 AND bSuspended = 0 and tCore_Header_0.iDate < @StartDt  
+group by iCode  
+union all   
+select iBookNo iAccount, sum(mAmount2) OP_NetBalance , sum(case when mAmount2<0 then  mAmount2 else 0 end) OP_DRBalance,sum(case when mAmount2>0 then  mAmount2 else 0 end) OP_CRBalance,
+0 Cur_NetBalance, 0 Cur_DRBalance, 0 Cur_CRBalance, 0 CL_NetBalance, 0 CL_DRBalance, 0 CL_CRBalance      
+from tCore_Data_0  join tCore_Header_0  on tCore_Data_0.iHeaderId = tCore_Header_0.iHeaderId  
+where bUpdateFA = 1 AND bSuspendUpdateFA = 0 AND iAuthStatus < 2 AND bSuspended = 0 and tCore_Header_0.iDate < @StartDt    
+group by iBookNo  
+union all
+select iCode iAccount, 0 OP_NetBalance, 0 OP_DRBalance, 0 OP_CRBalance, sum(mAmount1) Cur_NetBalance, sum(case when mAmount1<0 then  mAmount1 else 0 end) Cur_DRBalance, sum(case when mAmount1>0 then  mAmount1 else 0 end) Cur_CRBalance,    
+0 CL_NetBalance, 0 CL_DRBalance, 0 CL_CRBalance
+from tCore_Data_0  join tCore_Header_0  on tCore_Data_0.iHeaderId = tCore_Header_0.iHeaderId  
+where bUpdateFA = 1 AND bSuspendUpdateFA = 0 AND iAuthStatus < 2 AND bSuspended = 0 and tCore_Header_0.iDate between @StartDt and @EndDt 
+group by iCode  
+union all   
+select iBookNo iAccount, 0 OP_NetBalance, 0 OP_DRBalance, 0 OP_CRBalance, sum(mAmount2) Cur_NetBalance , sum(case when mAmount2<0 then  mAmount2 else 0 end) Cur_DRBalance,sum(case when mAmount2>0 then  mAmount2 else 0 end) Cur_CRBalance, 
+0 CL_NetBalance, 0 CL_DRBalance, 0 CL_CRBalance   
+from tCore_Data_0  join tCore_Header_0  on tCore_Data_0.iHeaderId = tCore_Header_0.iHeaderId  
+where bUpdateFA = 1 AND bSuspendUpdateFA = 0 AND iAuthStatus < 2 AND bSuspended = 0 and tCore_Header_0.iDate between @StartDt and @EndDt  
+group by iBookNo  
+union all
+select iCode iAccount, 0 OP_NetBalance, 0 OP_DRBalance, 0 OP_CRBalance, 0 Cur_NetBalance, 0 Cur_DRBalance, 0 Cur_CRBalance, 
+sum(mAmount1) CL_NetBalance, sum(case when mAmount1<0 then  mAmount1 else 0 end) CL_DRBalance, sum(case when mAmount1>0 then  mAmount1 else 0 end) CL_CRBalance
+from tCore_Data_0  join tCore_Header_0  on tCore_Data_0.iHeaderId = tCore_Header_0.iHeaderId  
+where bUpdateFA = 1 AND bSuspendUpdateFA = 0 AND iAuthStatus < 2 AND bSuspended = 0 and tCore_Header_0.iDate <= @EndDt    
+group by iCode  
+union all   
+select iBookNo iAccount, 0 OP_NetBalance, 0 OP_DRBalance, 0 OP_CRBalance, 0 Cur_NetBalance, 0 Cur_DRBalance, 0 Cur_CRBalance, 
+sum(mAmount2) CL_NetBalance , sum(case when mAmount2<0 then  mAmount2 else 0 end) CL_DRBalance,sum(case when mAmount2>0 then  mAmount2 else 0 end) CL_CRBalance 
+from tCore_Data_0  join tCore_Header_0  on tCore_Data_0.iHeaderId = tCore_Header_0.iHeaderId  
+where bUpdateFA = 1 AND bSuspendUpdateFA = 0 AND iAuthStatus < 2 AND bSuspended = 0 and tCore_Header_0.iDate <= @EndDt   
+group by iBookNo  
+)a group by iAccount)b
+join fCore_GetAccountImmidiateParent(0) g on b.iMasterId = g.iMasterId)m group by ParentName)r
+on t.sName = r.ParentName
+where t.bGroup = 1 
+
+
+
+update t1 set t1.OP_DRBalance = isnull(t1.OP_DRBalance,0) + isnull(t2.OP_DRBalance,0), t1.OP_CRBalance = isnull(t1.OP_CRBalance,0) + isnull(t2.OP_CRBalance,0), 
+t1.Cur_DRBalance = isnull(t1.Cur_DRBalance,0) + isnull(t2.Cur_DRBalance,0), 
+t1.Cur_CRBalance = isnull(t1.Cur_CRBalance,0) + isnull(t2.Cur_CRBalance,0), t1.CL_DRBalance = isnull(t1.CL_DRBalance,0) + isnull(t2.CL_DRBalance,0), 
+t1.CL_CRBalance = isnull(t1.CL_CRBalance,0) + isnull(t2.CL_CRBalance,0)
+from @TmpAc t1 
+inner join 
+(select iParentId, sum(OP_DRBalance) OP_DRBalance, sum(OP_CRBalance) OP_CRBalance, sum(Cur_DRBalance) Cur_DRBalance, sum(Cur_CRBalance) Cur_CRBalance, 
+sum(CL_DRBalance) CL_DRBalance, sum(CL_CRBalance) CL_CRBalance 
+from @TmpAc group by iParentId) t2 
+on t1.iMasterId = t2.iParentId 
+where t1.iLevel = 10
+
+
+update t1 set t1.OP_DRBalance = isnull(t1.OP_DRBalance,0) + isnull(t2.OP_DRBalance,0), t1.OP_CRBalance = isnull(t1.OP_CRBalance,0) + isnull(t2.OP_CRBalance,0), 
+t1.Cur_DRBalance = isnull(t1.Cur_DRBalance,0) + isnull(t2.Cur_DRBalance,0), 
+t1.Cur_CRBalance = isnull(t1.Cur_CRBalance,0) + isnull(t2.Cur_CRBalance,0), t1.CL_DRBalance = isnull(t1.CL_DRBalance,0) + isnull(t2.CL_DRBalance,0), 
+t1.CL_CRBalance = isnull(t1.CL_CRBalance,0) + isnull(t2.CL_CRBalance,0)
+from @TmpAc t1 
+inner join 
+(select iParentId, sum(OP_DRBalance) OP_DRBalance, sum(OP_CRBalance) OP_CRBalance, sum(Cur_DRBalance) Cur_DRBalance, sum(Cur_CRBalance) Cur_CRBalance, 
+sum(CL_DRBalance) CL_DRBalance, sum(CL_CRBalance) CL_CRBalance 
+from @TmpAc group by iParentId) t2 
+on t1.iMasterId = t2.iParentId 
+where t1.iLevel = 9
+
+
+update t1 set t1.OP_DRBalance = isnull(t1.OP_DRBalance,0) + isnull(t2.OP_DRBalance,0), t1.OP_CRBalance = isnull(t1.OP_CRBalance,0) + isnull(t2.OP_CRBalance,0), 
+t1.Cur_DRBalance = isnull(t1.Cur_DRBalance,0) + isnull(t2.Cur_DRBalance,0), 
+t1.Cur_CRBalance = isnull(t1.Cur_CRBalance,0) + isnull(t2.Cur_CRBalance,0), t1.CL_DRBalance = isnull(t1.CL_DRBalance,0) + isnull(t2.CL_DRBalance,0), 
+t1.CL_CRBalance = isnull(t1.CL_CRBalance,0) + isnull(t2.CL_CRBalance,0)
+from @TmpAc t1 
+inner join 
+(select iParentId, sum(OP_DRBalance) OP_DRBalance, sum(OP_CRBalance) OP_CRBalance, sum(Cur_DRBalance) Cur_DRBalance, sum(Cur_CRBalance) Cur_CRBalance, 
+sum(CL_DRBalance) CL_DRBalance, sum(CL_CRBalance) CL_CRBalance 
+from @TmpAc group by iParentId) t2 
+on t1.iMasterId = t2.iParentId 
+where t1.iLevel = 8
+
+
+update t1 set t1.OP_DRBalance = isnull(t1.OP_DRBalance,0) + isnull(t2.OP_DRBalance,0), t1.OP_CRBalance = isnull(t1.OP_CRBalance,0) + isnull(t2.OP_CRBalance,0), 
+t1.Cur_DRBalance = isnull(t1.Cur_DRBalance,0) + isnull(t2.Cur_DRBalance,0), 
+t1.Cur_CRBalance = isnull(t1.Cur_CRBalance,0) + isnull(t2.Cur_CRBalance,0), t1.CL_DRBalance = isnull(t1.CL_DRBalance,0) + isnull(t2.CL_DRBalance,0), 
+t1.CL_CRBalance = isnull(t1.CL_CRBalance,0) + isnull(t2.CL_CRBalance,0)
+from @TmpAc t1 
+inner join 
+(select iParentId, sum(OP_DRBalance) OP_DRBalance, sum(OP_CRBalance) OP_CRBalance, sum(Cur_DRBalance) Cur_DRBalance, sum(Cur_CRBalance) Cur_CRBalance, 
+sum(CL_DRBalance) CL_DRBalance, sum(CL_CRBalance) CL_CRBalance 
+from @TmpAc group by iParentId) t2 
+on t1.iMasterId = t2.iParentId 
+where t1.iLevel = 7
+
+
+update t1 set t1.OP_DRBalance = isnull(t1.OP_DRBalance,0) + isnull(t2.OP_DRBalance,0), t1.OP_CRBalance = isnull(t1.OP_CRBalance,0) + isnull(t2.OP_CRBalance,0), 
+t1.Cur_DRBalance = isnull(t1.Cur_DRBalance,0) + isnull(t2.Cur_DRBalance,0), 
+t1.Cur_CRBalance = isnull(t1.Cur_CRBalance,0) + isnull(t2.Cur_CRBalance,0), t1.CL_DRBalance = isnull(t1.CL_DRBalance,0) + isnull(t2.CL_DRBalance,0), 
+t1.CL_CRBalance = isnull(t1.CL_CRBalance,0) + isnull(t2.CL_CRBalance,0)
+from @TmpAc t1 
+inner join 
+(select iParentId, sum(OP_DRBalance) OP_DRBalance, sum(OP_CRBalance) OP_CRBalance, sum(Cur_DRBalance) Cur_DRBalance, sum(Cur_CRBalance) Cur_CRBalance, 
+sum(CL_DRBalance) CL_DRBalance, sum(CL_CRBalance) CL_CRBalance 
+from @TmpAc group by iParentId) t2 
+on t1.iMasterId = t2.iParentId 
+where t1.iLevel = 6
+
+
+
+update t1 set t1.OP_DRBalance = isnull(t1.OP_DRBalance,0) + isnull(t2.OP_DRBalance,0), t1.OP_CRBalance = isnull(t1.OP_CRBalance,0) + isnull(t2.OP_CRBalance,0), 
+t1.Cur_DRBalance = isnull(t1.Cur_DRBalance,0) + isnull(t2.Cur_DRBalance,0), 
+t1.Cur_CRBalance = isnull(t1.Cur_CRBalance,0) + isnull(t2.Cur_CRBalance,0), t1.CL_DRBalance = isnull(t1.CL_DRBalance,0) + isnull(t2.CL_DRBalance,0), 
+t1.CL_CRBalance = isnull(t1.CL_CRBalance,0) + isnull(t2.CL_CRBalance,0)
+from @TmpAc t1 
+inner join 
+(select iParentId, sum(OP_DRBalance) OP_DRBalance, sum(OP_CRBalance) OP_CRBalance, sum(Cur_DRBalance) Cur_DRBalance, sum(Cur_CRBalance) Cur_CRBalance, 
+sum(CL_DRBalance) CL_DRBalance, sum(CL_CRBalance) CL_CRBalance 
+from @TmpAc group by iParentId) t2 
+on t1.iMasterId = t2.iParentId 
+where t1.iLevel = 5
+
+
+update t1 set t1.OP_DRBalance = isnull(t1.OP_DRBalance,0) + isnull(t2.OP_DRBalance,0), t1.OP_CRBalance = isnull(t1.OP_CRBalance,0) + isnull(t2.OP_CRBalance,0), 
+t1.Cur_DRBalance = isnull(t1.Cur_DRBalance,0) + isnull(t2.Cur_DRBalance,0), 
+t1.Cur_CRBalance = isnull(t1.Cur_CRBalance,0) + isnull(t2.Cur_CRBalance,0), t1.CL_DRBalance = isnull(t1.CL_DRBalance,0) + isnull(t2.CL_DRBalance,0), 
+t1.CL_CRBalance = isnull(t1.CL_CRBalance,0) + isnull(t2.CL_CRBalance,0)
+from @TmpAc t1 
+inner join 
+(select iParentId, sum(OP_DRBalance) OP_DRBalance, sum(OP_CRBalance) OP_CRBalance, sum(Cur_DRBalance) Cur_DRBalance, sum(Cur_CRBalance) Cur_CRBalance, 
+sum(CL_DRBalance) CL_DRBalance, sum(CL_CRBalance) CL_CRBalance 
+from @TmpAc group by iParentId) t2 
+on t1.iMasterId = t2.iParentId 
+where t1.iLevel = 4
+
+
+update t1 set t1.OP_DRBalance = isnull(t1.OP_DRBalance,0) + isnull(t2.OP_DRBalance,0), t1.OP_CRBalance = isnull(t1.OP_CRBalance,0) + isnull(t2.OP_CRBalance,0), 
+t1.Cur_DRBalance = isnull(t1.Cur_DRBalance,0) + isnull(t2.Cur_DRBalance,0), 
+t1.Cur_CRBalance = isnull(t1.Cur_CRBalance,0) + isnull(t2.Cur_CRBalance,0), t1.CL_DRBalance = isnull(t1.CL_DRBalance,0) + isnull(t2.CL_DRBalance,0), 
+t1.CL_CRBalance = isnull(t1.CL_CRBalance,0) + isnull(t2.CL_CRBalance,0)
+from @TmpAc t1 
+inner join 
+(select iParentId, sum(OP_DRBalance) OP_DRBalance, sum(OP_CRBalance) OP_CRBalance, sum(Cur_DRBalance) Cur_DRBalance, sum(Cur_CRBalance) Cur_CRBalance, 
+sum(CL_DRBalance) CL_DRBalance, sum(CL_CRBalance) CL_CRBalance 
+from @TmpAc group by iParentId) t2 
+on t1.iMasterId = t2.iParentId 
+where t1.iLevel = 3
+
+
+update t1 set t1.OP_DRBalance = isnull(t1.OP_DRBalance,0) + isnull(t2.OP_DRBalance,0), t1.OP_CRBalance = isnull(t1.OP_CRBalance,0) + isnull(t2.OP_CRBalance,0), 
+t1.Cur_DRBalance = isnull(t1.Cur_DRBalance,0) + isnull(t2.Cur_DRBalance,0), 
+t1.Cur_CRBalance = isnull(t1.Cur_CRBalance,0) + isnull(t2.Cur_CRBalance,0), t1.CL_DRBalance = isnull(t1.CL_DRBalance,0) + isnull(t2.CL_DRBalance,0), 
+t1.CL_CRBalance = isnull(t1.CL_CRBalance,0) + isnull(t2.CL_CRBalance,0)
+from @TmpAc t1 
+inner join 
+(select iParentId, sum(OP_DRBalance) OP_DRBalance, sum(OP_CRBalance) OP_CRBalance, sum(Cur_DRBalance) Cur_DRBalance, sum(Cur_CRBalance) Cur_CRBalance, 
+sum(CL_DRBalance) CL_DRBalance, sum(CL_CRBalance) CL_CRBalance 
+from @TmpAc group by iParentId) t2 
+on t1.iMasterId = t2.iParentId 
+where t1.iLevel = 2
+
+
+update t1 set t1.OP_DRBalance = isnull(t1.OP_DRBalance,0) + isnull(t2.OP_DRBalance,0), t1.OP_CRBalance = isnull(t1.OP_CRBalance,0) + isnull(t2.OP_CRBalance,0), 
+t1.Cur_DRBalance = isnull(t1.Cur_DRBalance,0) + isnull(t2.Cur_DRBalance,0), 
+t1.Cur_CRBalance = isnull(t1.Cur_CRBalance,0) + isnull(t2.Cur_CRBalance,0), t1.CL_DRBalance = isnull(t1.CL_DRBalance,0) + isnull(t2.CL_DRBalance,0), 
+t1.CL_CRBalance = isnull(t1.CL_CRBalance,0) + isnull(t2.CL_CRBalance,0)
+from @TmpAc t1 
+inner join 
+(select iParentId, sum(OP_DRBalance) OP_DRBalance, sum(OP_CRBalance) OP_CRBalance, sum(Cur_DRBalance) Cur_DRBalance, sum(Cur_CRBalance) Cur_CRBalance, 
+sum(CL_DRBalance) CL_DRBalance, sum(CL_CRBalance) CL_CRBalance 
+from @TmpAc group by iParentId) t2 
+on t1.iMasterId = t2.iParentId 
+where t1.iLevel = 1
+
+
+update t1 set t1.OP_DRBalance = isnull(t1.OP_DRBalance,0) + isnull(t2.OP_DRBalance,0), t1.OP_CRBalance = isnull(t1.OP_CRBalance,0) + isnull(t2.OP_CRBalance,0), 
+t1.Cur_DRBalance = isnull(t1.Cur_DRBalance,0) + isnull(t2.Cur_DRBalance,0), 
+t1.Cur_CRBalance = isnull(t1.Cur_CRBalance,0) + isnull(t2.Cur_CRBalance,0), t1.CL_DRBalance = isnull(t1.CL_DRBalance,0) + isnull(t2.CL_DRBalance,0), 
+t1.CL_CRBalance = isnull(t1.CL_CRBalance,0) + isnull(t2.CL_CRBalance,0)
+from @TmpAc t1 
+inner join 
+(select iParentId, sum(OP_DRBalance) OP_DRBalance, sum(OP_CRBalance) OP_CRBalance, sum(Cur_DRBalance) Cur_DRBalance, sum(Cur_CRBalance) Cur_CRBalance, 
+sum(CL_DRBalance) CL_DRBalance, sum(CL_CRBalance) CL_CRBalance 
+from @TmpAc group by iParentId) t2 
+on t1.iMasterId = t2.iParentId 
+where t1.iLevel = 0
+
+
+update t1 set iType = 1 from @TmpAc t1 
+join mCore_Account ma on ma.iMasterId = t1.iMasterId 
+where ma.iAccountType in (1,2,5,6,7,8,9,12,17,18,21,23,24,26,28,32,33,35,36,37)
+
+update t1 set iType = 2 from @TmpAc t1 
+join mCore_Account ma on ma.iMasterId = t1.iMasterId 
+where ma.iAccountType in (3,4,10,11,13,14,15,16,19,20,22,25,27,29,30,34,38)
+
+insert into @NetEarningBal
+select 'Net Earnings' GroupName,
+--case when CL_DRBalance >= CL_CRBalance then 'Loss for the period' else 'Profit for the period' end Group_Name, 
+(OP_CRBalance+OP_DRBalance) - (CL_CRBalance+CL_DRBalance) Bal,0 MainCashFLow
+from 
+(select sum(OP_DRBalance) OP_DRBalance, sum(OP_CRBalance) OP_CRBalance, sum(Cur_DRBalance) Cur_DRBalance, sum(Cur_CRBalance) Cur_CRBalance, 
+sum(CL_DRBalance) CL_DRBalance, sum(CL_CRBalance) CL_CRBalance from 
+(select sName Group_Name, sCode Group_Code, 
+case when OP_DRBalance + OP_CRBalance < 0 then abs(OP_DRBalance + OP_CRBalance) else 0 end OP_DRBalance,  
+case when OP_DRBalance + OP_CRBalance >=0 then abs(OP_DRBalance + OP_CRBalance) else 0 end OP_CRBalance, 
+Cur_DRBalance, Cur_CRBalance, 
+case when CL_DRBalance + CL_CRBalance < 0 then abs(CL_DRBalance + CL_CRBalance) else 0 end CL_DRBalance,   
+case when CL_DRBalance + CL_CRBalance >=0 then abs(CL_DRBalance + CL_CRBalance) else 0 end CL_CRBalance, iSeq, iType, iLevel
+from @TmpAc
+where (OP_DRBalance <> 0 or OP_CRBalance <> 0 or Cur_DRBalance <> 0 or Cur_CRBalance <> 0 or CL_DRBalance <> 0 or CL_CRBalance <> 0)
+and iType = 2
+)a
+where iLevel = 0)b
+return
+end
+
+
+
+
+alter FUNCTION [dbo].[Get_Ac_OP_CL_CUR_Bal]
+(
+@StartDt int,
+@EndDt int
+)    
+
+RETURNS @AcOpClCurBal TABLE (
+SubCategory varchar(500),
+Balance decimal(18,2),
+MainCashFLow int
+)
+
+AS
+BEGIN
+declare @TmpAc TABLE (
+iMasterId int,
+OP_DRBalance decimal(18,2),
+OP_CRBalance decimal(18,2),
+Cur_DRBalance decimal(18,2),
+Cur_CRBalance decimal(18,2),
+CL_DRBalance decimal(18,2),
+CL_CRBalance decimal(18,2)
+)
+
+insert into @TmpAc
+select iMasterId,
+isnull(r.OP_DRBalance,0) OP_DRBalance, isnull(r.OP_CRBalance,0) OP_CRBalance, isnull(r.Cur_DRBalance,0) Cur_DRBalance, 
+isnull(r.Cur_CRBalance,0) Cur_CRBalance, isnull(r.CL_DRBalance,0) CL_DRBalance, isnull(r.CL_CRBalance,0) CL_CRBalance
+from 
+(select m.iMasterId, sum(OP_DRBalance) OP_DRBalance, sum(OP_CRBalance) OP_CRBalance, sum(Cur_DRBalance) Cur_DRBalance, sum(Cur_CRBalance) Cur_CRBalance, 
+sum(CL_DRBalance) CL_DRBalance, sum(CL_CRBalance) CL_CRBalance 
+from 
+(select b.iMasterId, case when b.OP_NetBalance < 0 then b.OP_NetBalance else 0 end OP_DRBalance, case when b.OP_NetBalance > 0 then b.OP_NetBalance else 0 end OP_CRBalance, 
+b.Cur_DRBalance, b.Cur_CRBalance, case when b.CL_NetBalance < 0 then CL_NetBalance else 0 end CL_DRBalance, case when b.CL_NetBalance > 0 then CL_NetBalance else 0 end CL_CRBalance
+from 
+(select iAccount iMasterId, ISNULL(sum(OP_NetBalance), 0) OP_NetBalance, abs(ISNULL(sum(OP_DRBalance), 0)) OP_DRBalance,abs(ISNULL(sum(OP_CRBalance), 0)) OP_CRBalance, 
+ISNULL(sum(Cur_NetBalance), 0) Cur_NetBalance, abs(ISNULL(sum(Cur_DRBalance), 0)) Cur_DRBalance,abs(ISNULL(sum(Cur_CRBalance), 0)) Cur_CRBalance, 
+ISNULL(sum(CL_NetBalance), 0) CL_NetBalance, abs(ISNULL(sum(CL_DRBalance), 0)) CL_DRBalance,abs(ISNULL(sum(CL_CRBalance), 0)) CL_CRBalance 
+from   
+(  
+select iCode iAccount , sum(mAmount1) OP_NetBalance, sum(case when mAmount1<0 then  mAmount1 else 0 end) OP_DRBalance,sum(case when mAmount1>0 then  mAmount1 else 0 end) OP_CRBalance, 
+0 Cur_NetBalance, 0 Cur_DRBalance, 0 Cur_CRBalance, 0 CL_NetBalance, 0 CL_DRBalance, 0 CL_CRBalance   
+from tCore_Data_0  join tCore_Header_0  on tCore_Data_0.iHeaderId = tCore_Header_0.iHeaderId  
+where bUpdateFA = 1 AND bSuspendUpdateFA = 0 AND iAuthStatus < 2 AND bSuspended = 0 and tCore_Header_0.iDate < @StartDt  
+group by iCode  
+union all   
+select iBookNo iAccount, sum(mAmount2) OP_NetBalance , sum(case when mAmount2<0 then  mAmount2 else 0 end) OP_DRBalance,sum(case when mAmount2>0 then  mAmount2 else 0 end) OP_CRBalance,
+0 Cur_NetBalance, 0 Cur_DRBalance, 0 Cur_CRBalance, 0 CL_NetBalance, 0 CL_DRBalance, 0 CL_CRBalance      
+from tCore_Data_0  join tCore_Header_0  on tCore_Data_0.iHeaderId = tCore_Header_0.iHeaderId  
+where bUpdateFA = 1 AND bSuspendUpdateFA = 0 AND iAuthStatus < 2 AND bSuspended = 0 and tCore_Header_0.iDate < @StartDt   
+group by iBookNo  
+union all
+select iCode iAccount, 0 OP_NetBalance, 0 OP_DRBalance, 0 OP_CRBalance, sum(mAmount1) Cur_NetBalance, sum(case when mAmount1<0 then  mAmount1 else 0 end) Cur_DRBalance, sum(case when mAmount1>0 then  mAmount1 else 0 end) Cur_CRBalance,    
+0 CL_NetBalance, 0 CL_DRBalance, 0 CL_CRBalance
+from tCore_Data_0  join tCore_Header_0  on tCore_Data_0.iHeaderId = tCore_Header_0.iHeaderId  
+where bUpdateFA = 1 AND bSuspendUpdateFA = 0 AND iAuthStatus < 2 AND bSuspended = 0 and (tCore_Header_0.iDate between @StartDt and @EndDt) 
+group by iCode  
+union all   
+select iBookNo iAccount, 0 OP_NetBalance, 0 OP_DRBalance, 0 OP_CRBalance, sum(mAmount2) Cur_NetBalance , sum(case when mAmount2<0 then  mAmount2 else 0 end) Cur_DRBalance,sum(case when mAmount2>0 then  mAmount2 else 0 end) Cur_CRBalance, 
+0 CL_NetBalance, 0 CL_DRBalance, 0 CL_CRBalance   
+from tCore_Data_0  join tCore_Header_0  on tCore_Data_0.iHeaderId = tCore_Header_0.iHeaderId  
+where bUpdateFA = 1 AND bSuspendUpdateFA = 0 AND iAuthStatus < 2 AND bSuspended = 0 and (tCore_Header_0.iDate between @StartDt and @EndDt) 
+group by iBookNo  
+union all
+select iCode iAccount, 0 OP_NetBalance, 0 OP_DRBalance, 0 OP_CRBalance, 0 Cur_NetBalance, 0 Cur_DRBalance, 0 Cur_CRBalance, 
+sum(mAmount1) CL_NetBalance, sum(case when mAmount1<0 then  mAmount1 else 0 end) CL_DRBalance, sum(case when mAmount1>0 then  mAmount1 else 0 end) CL_CRBalance
+from tCore_Data_0  join tCore_Header_0  on tCore_Data_0.iHeaderId = tCore_Header_0.iHeaderId  
+where bUpdateFA = 1 AND bSuspendUpdateFA = 0 AND iAuthStatus < 2 AND bSuspended = 0 and tCore_Header_0.iDate <= @EndDt
+group by iCode  
+union all   
+select iBookNo iAccount, 0 OP_NetBalance, 0 OP_DRBalance, 0 OP_CRBalance, 0 Cur_NetBalance, 0 Cur_DRBalance, 0 Cur_CRBalance, 
+sum(mAmount2) CL_NetBalance , sum(case when mAmount2<0 then  mAmount2 else 0 end) CL_DRBalance,sum(case when mAmount2>0 then  mAmount2 else 0 end) CL_CRBalance 
+from tCore_Data_0  join tCore_Header_0  on tCore_Data_0.iHeaderId = tCore_Header_0.iHeaderId  
+where bUpdateFA = 1 AND bSuspendUpdateFA = 0 AND iAuthStatus < 2 AND bSuspended = 0 and tCore_Header_0.iDate <= @EndDt 
+group by iBookNo  
+)a group by iAccount)b
+)m group by iMasterId)r
+
+insert into @AcOpClCurBal
+select 'Changes in '+SubCat,Bal,MainCashFLow from
+(
+select s.sName SubCat,sum(t.OP_CRBalance+t.OP_DRBalance) - sum(t.CL_CRBalance+t.CL_DRBalance) Bal,1 MainCashFLow  from mCore_Account a
+join muCore_Account au on au.iMasterId = a.iMasterId
+join mCore_CashFlowSubCategory s on s.iMasterId = dbo.GetAcCashFLowSubCat(a.iMasterId)
+join @TmpAc t on t.iMasterId = a.iMasterId
+where  a.iStatus <>5 and dbo.GetAcCashFLowMainCat(a.iMasterId) = 1 and dbo.GetAcCashFLowSubCat(a.iMasterId)<>0
+group by s.sName
+union all
+select s.sName SubCat,sum(t.OP_CRBalance+t.OP_DRBalance) + sum(t.CL_CRBalance+t.CL_DRBalance) Bal,2 MainCashFLow from mCore_Account a
+join muCore_Account au on au.iMasterId = a.iMasterId
+join mCore_CashFlowSubCategory s on s.iMasterId = dbo.GetAcCashFLowSubCat(a.iMasterId)
+join @TmpAc t on t.iMasterId = a.iMasterId
+where  a.iStatus <>5 and dbo.GetAcCashFLowMainCat(a.iMasterId) = 2 and dbo.GetAcCashFLowSubCat(a.iMasterId)<>0
+group by s.sName
+union all
+select s.sName SubCat,sum(t.OP_CRBalance+t.OP_DRBalance) + sum(t.CL_CRBalance+t.CL_DRBalance) Bal,3 MainCashFLow from mCore_Account a
+join muCore_Account au on au.iMasterId = a.iMasterId
+join mCore_CashFlowSubCategory s on s.iMasterId = dbo.GetAcCashFLowSubCat(a.iMasterId)
+join @TmpAc t on t.iMasterId = a.iMasterId
+where  a.iStatus <>5 and dbo.GetAcCashFLowMainCat(a.iMasterId) = 3 and dbo.GetAcCashFLowSubCat(a.iMasterId)<>0
+group by s.sName
+)a
+
+insert into @AcOpClCurBal
+select 'Opening Cash Balance' SubCat,sum(t.OP_CRBalance+t.OP_DRBalance) Bal,4 MainCashFLow from mCore_Account a
+join muCore_Account au on au.iMasterId = a.iMasterId
+join @TmpAc t on t.iMasterId = a.iMasterId
+where  a.iStatus <>5 and a.iAccountType in (1,2)
+
+RETURN
+END
+
+
+
+
+
+
+create FUNCTION dbo.GetAcCashFLowSubCat (@Accountid int)  
+RETURNS int  
+AS  
+BEGIN  
+declare @Aid as int;  
+DECLARE @returnValue as int;  
+set @returnValue = 0;  
+select @returnValue = CashFlowSubCategory,@Aid = iParentId from vmCore_Account where iMasterId = @Accountid and iStatus<>5;  
+IF (@returnValue = 0 and @Aid != 0)  
+BEGIN  
+ return dbo.GetAcCashFLowSubCat(@Aid);  
+END  
+return @returnValue  
+END  
+  
+
+
+
+
+create FUNCTION dbo.GetAcCashFLowMainCat (@Accountid int)  
+RETURNS int  
+AS  
+BEGIN  
+declare @Aid as int;  
+DECLARE @returnValue as int;  
+set @returnValue = 0;  
+select @returnValue = CashFlowMainCategory,@Aid = iParentId from vmCore_Account where iMasterId = @Accountid and iStatus<>5;  
+IF (@returnValue = 0 and @Aid != 0)  
+BEGIN  
+ return dbo.GetAcCashFLowMainCat(@Aid);  
+END  
+return @returnValue  
+END  
+  
