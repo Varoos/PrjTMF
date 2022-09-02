@@ -1,0 +1,240 @@
+﻿@model PrjTMF.Models.CFFilter
+
+@{
+    ViewBag.Title = "CFIndex";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<style>
+    #progress {
+        text-align: center;
+        z-index: 1000000;
+        overflow: auto;
+        height: 100%;
+    }
+
+    #load {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 9999;
+        background: url("https://www.creditmutuel.fr/cmne/fr/banques/webservices/nswr/images/loading.gif") no-repeat center center rgba(0,0,0,0.26);
+        /*background:url("../../Content/Processing.gif") no-repeat center center rgba(0,0,0,0.25);*/
+    }
+
+    thead {
+        color: white;
+        background-color: #34c4f9 !important;
+    }
+
+    .label {
+        color: #34c4f9;
+    }
+
+    h2 {
+        border-bottom: 3px solid #cc9900;
+        font: 2.75em/1.75em Georgia, serif;
+        color: #996600;
+    }
+    /* Input field */
+    .select2-selection__rendered {
+        font-size: medium;
+        font-weight: normal;
+    }
+
+    /* Around the search field */
+    .select2-search {
+        font-size: small;
+        font-weight: normal;
+    }
+
+        /* Search field */
+        .select2-search input {
+            font-size: medium;
+            font-weight: normal;
+        }
+
+    /* Each result */
+    .select2-results {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: medium;
+        font-weight: normal;
+    }
+
+    /* Higlighted (hover) result */
+    .select2-results__option--highlighted {
+        font-size: medium;
+        font-weight: normal;
+    }
+
+    /* Selected option */
+    .select2-results__option[aria-selected=true] {
+        background: #3ea211;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: medium;
+        font-weight: normal;
+    }
+
+    /* My css class*/
+    .select2Style {
+        width: 200px;
+    }
+</style>
+
+<div id="progress" class="modal">
+    <div class="center">
+        <img src="~/Content/loader4.gif" />
+    </div>
+</div>
+
+<h2 style="color: #34c4f9 "> Cash Flow Satements </h2>
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+<div class="container">
+    <br />
+    <div class="row">
+        
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.Label("Year", new { @class = "col-md-4 control-label" })
+                    <div class="col-md-8">
+                        @Html.TextBoxFor(model => model.Year, new { @class = "form-control", @list = "_glist", @autocomplete = "off" })
+                        <datalist id="_glist"></datalist>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Report For</label>
+                    <div class="col-md-8">
+                        <label> @Html.RadioButtonFor(m => m.Type, "Year", new { @Id = "Year", @Class = "rpttype", Checked = "checked" }) <b>Year</b></label>  &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label> @Html.RadioButtonFor(m => m.Type, "Quarter", new { @Id = "Quarter", @Class = "rpttype" }) <b>Quarter</b></label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label> @Html.RadioButtonFor(m => m.Type, "Month", new { @Id = "Month", @Class = "rpttype" }) <b>Month</b></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-offset-10 col-md-2">
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" id="btnok">Load</button>
+                    <button type="button" class="btn btn-primary" id="btnClose" name="Close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="searchResults">
+
+    </div>
+</div>
+}
+
+@section Scripts {
+    <script src="~/Scripts/FClient.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />
+    <script src="~/Scripts/toastr.js"></script>
+    <script>
+        var compId=@ViewBag.CompId;
+        var AcYear = '@System.Web.Configuration.WebConfigurationManager.AppSettings["AcYear"]';
+        var years = [];
+        for (var i = 0; i < 9; i++) {
+            years.push(parseInt(AcYear) + parseInt(i))
+        }
+        console.log(years)
+        $(window).on("load", function () {
+            debugger;
+            $("#_glist").empty();
+            $("#Year").on('keyup', function () {
+                var val = this.value;
+                YearAutoComplete(val);
+            }).on('focus', function () { this.select();});
+        });
+        function YearAutoComplete(val) {
+            $("#_glist").empty();
+            $.each(years, function (i, item) {
+                let str = item.toString();
+                if (str.indexOf(val.trim()) > -1) {
+                    $("#_glist").append($("<option data-value=" + item+ " >" + item + "</option>"));
+                }
+            });
+        }
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "500",
+            "hideDuration": "500",
+            "timeOut": "2500",
+            "extendedTimeOut": "500",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+        var path = '@System.Web.Configuration.WebConfigurationManager.AppSettings["IpAddress"]';
+        var domain ='@System.Web.Configuration.WebConfigurationManager.AppSettings["domain"]';
+
+        //----------------------------- report method calling ------------------------------------
+
+        $("#btnok").click(function () {
+            $("#progress").show();
+            debugger
+            if ($("#Year").val() == "") {
+                toastr.warning("Please Select Year");
+            }
+            
+            var _objsearch = {
+                CompanyId: compId,
+                Year: $("#Year").val(),
+                Type: $("input:radio[class=rpttype]:checked").attr('id'),
+            };
+            debugger;
+             $.ajax({
+                 url: path + domain + '/Home/CFReport2',
+                dataType: "json",
+                type: "POST",
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(_objsearch),
+                async: true,
+                processData: false,
+                cache: false,
+                 success: function (response) {
+                     $("#progress").hide();
+                     console.log(response, "Success")
+                     if (response == 'Success') {
+                         window.location.href = path + domain + "/Home/CFReport";
+                     }
+                     else{
+                         $("#searchResults").html('<span style="color:red;fond:bold">' + response+'</span>');
+                     }
+                },
+                 error: function (err) {
+                     $("#progress").hide();
+                    console.log(err)
+                }
+            })
+        });
+
+
+
+        $('#btnClose').click(function () {
+            debugger;
+            Focus8WAPI.gotoHomePage();
+        });
+
+
+    </script>
+}
+
